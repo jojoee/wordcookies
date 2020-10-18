@@ -80,7 +80,6 @@ class TestGetPossibleAnswers:
 
 class TestGroup:
     def test_normal(self):
-        n = 7
         answers = [
             'co', 'so',
             'ceo', 'eco', 'seo',
@@ -89,7 +88,7 @@ class TestGroup:
             'cookie',
             'cookies',
         ]
-        assert is_same_dict(game.group(answers, n), {
+        assert is_same_dict(game.group(answers), {
             2: ['co', 'so'],
             3: ['ceo', 'eco', 'seo'],
             4: ['cook', 'sick', 'sock'],

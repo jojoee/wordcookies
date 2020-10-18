@@ -55,23 +55,24 @@ def get_possible_answers(word_set: Set, chars: List[str]) -> List[str]:
     return answers
 
 
-def group(answers: List[str], n: int) -> Dict[int, List[str]]:
+def group(answers: List[str]) -> Dict[int, List[str]]:
     """
     group an answers into group-of-word-length
 
     :param answers:
-    :param n:
     :return:
     """
     answers.sort()  # sort
-
-    # make it group to display
     answers_group = {}
-    for n in range(2, n + 1):
-        answers_group[n] = []
 
     for item in answers:
-        answers_group[len(item)].append(item)
+        n = len(item)
+
+        # define key value if it doesn't exists
+        if n not in answers_group:
+            answers_group[n] = []
+
+        answers_group[n].append(item)
 
     print("answers_group", answers_group)
 
