@@ -57,7 +57,7 @@ def get_possible_answers(word_set: Set, chars: List[str]) -> List[str]:
 
 def group(answers: List[str], n: int) -> Dict[int, List[str]]:
     """
-    formatting an answers into group (group that based on word length)
+    group an answers into group-of-word-length
 
     :param answers:
     :param n:
