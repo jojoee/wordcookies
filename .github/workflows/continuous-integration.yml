@@ -37,4 +37,4 @@ jobs:
         run: |
           # able to run cli
           pip install .
-          # todo complete it
+          python -m wordcookies cli --word="word" --exit
