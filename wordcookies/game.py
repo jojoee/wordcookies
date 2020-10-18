@@ -27,7 +27,7 @@ def clean(inp: str) -> List[str]:
     return chars
 
 
-def get_possible_answers(word_set: Set, chars: List[str]) -> List[str]:
+def get_possible_answers(chars: List[str], word_set: Set = all_words) -> List[str]:
     """
     Get possible answers
 

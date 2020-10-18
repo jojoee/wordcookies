@@ -45,7 +45,7 @@ class TestGetPossibleAnswers:
         # none match
         word_set = {'milk', 'non', 'wood'}
         word = 'mile'
-        assert is_list_equals(game.get_possible_answers(word_set, game.clean(word)), [])
+        assert is_list_equals(game.get_possible_answers(game.clean(word), word_set), [])
 
         # 3 chars match
         word_set = {
@@ -53,7 +53,7 @@ class TestGetPossibleAnswers:
             'ceo', 'eco', 'seo', 'abc', 'ahf',
         }
         word = 'ceo'
-        assert is_list_equals(game.get_possible_answers(word_set, game.clean(word)), [
+        assert is_list_equals(game.get_possible_answers(game.clean(word), word_set), [
             'eo', 'co',
             'ceo', 'eco',
         ])
@@ -68,7 +68,7 @@ class TestGetPossibleAnswers:
             'cookies', 'popular'
         }
         word = 'cookies'
-        assert is_list_equals(game.get_possible_answers(word_set, game.clean(word)), [
+        assert is_list_equals(game.get_possible_answers(game.clean(word), word_set), [
             'co', 'so',
             'ceo', 'eco', 'seo',
             'cook', 'sick', 'sock',
