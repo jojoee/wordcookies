@@ -76,6 +76,4 @@ def group(answers: List[str]) -> Dict[int, List[str]]:
 
         answers_group[n].append(item)
 
-    print("answers_group", answers_group)
-
     return answers_group
