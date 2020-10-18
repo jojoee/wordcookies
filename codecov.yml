@@ -1,0 +1,4 @@
+ignore:
+  - "wordcookies/__init__.py"
+  - "wordcookies/__main__.py"
+  - "setup.py"
