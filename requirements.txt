@@ -1,5 +1,2 @@
-flake8==3.8.4
 nltk==3.5
-pytest==6.1.1
-pytest-cov==2.10.1
 requests==2.24.0
