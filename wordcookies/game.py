@@ -2,9 +2,11 @@ import pickle
 from typing import List, Dict, Set
 from itertools import permutations
 import re
+import os
 
 # init Word Cookies
-model_path = "./wordcookies/all_words.pickle"
+dir_path = os.path.dirname(os.path.realpath(__file__))
+model_path = os.path.join(dir_path, './all_words.pickle')
 all_words = pickle.load(open(model_path, "rb"))
 print({"n": len(all_words), "example": list(all_words)[:10]})
 
