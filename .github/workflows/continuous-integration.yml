@@ -25,7 +25,7 @@ jobs:
           pip install pytest-cov
       - name: Generate word dictionary
         run: |
-          jupyter nbconvert --to notebook --inplace --execute generate-all_words.pickle.ipynb
+          jupyter nbconvert --to notebook --inplace --execute "wordcookies/model/generate-all_words.pickle.ipynb"
       - name: Lint with flake8
         run: |
           # all Python files should follow PEP8 (except some notebooks, see setup.cfg)
