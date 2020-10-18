@@ -102,7 +102,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 venv/
@@ -127,3 +126,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# data
+all_words.pickle
+
+# editor
+.idea
+.vscode
+
+# env
+.env*
+!.env.example
+!.env.test
+!.env.docker
