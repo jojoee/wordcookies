@@ -1,12 +1,19 @@
 import pickle
 from typing import List, Dict, Set
 from itertools import permutations
+from wordcookies.generator import generate_dict
 import re
 import os
 
 # init Word Cookies
 dir_path = os.path.dirname(os.path.realpath(__file__))
-model_path = os.path.join(dir_path, 'model', 'all_words.pickle')
+model_path = os.path.join(dir_path, 'all_words.pickle')
+if os.path.isfile(model_path):
+    print("dict: found in %s" % model_path)
+else:
+    print("dict: not found then generate and save into %s", model_path)
+    generate_dict(model_path)
+print("dict: load into process")
 all_words = pickle.load(open(model_path, "rb"))
 print({"n": len(all_words), "example": list(all_words)[:10]})
 
