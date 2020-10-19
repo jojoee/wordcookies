@@ -9,7 +9,47 @@ Word Cookies helper
 
 ## Usage
 
-1. Install [Python3](https://www.python.org/downloads/) and [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+### Library
+
+[Install](https://github.com/jojoee/wordcookies#installation) the package then
+
+```python
+from wordcookies import game
+from pprint import pprint
+
+word = "word"
+chars = game.clean(word)
+answers = game.get_possible_answers(chars)
+g = game.group(answers)
+pprint(g, width=120)
+
+"""
+{2: ['do', 'dr', 'dw', 'od', 'or', 'ow', 'rd', 'ro', 'rw', 'wd', 'wo', 'wr'],
+ 3: ['dor', 'dow', 'ord', 'owd', 'owr', 'rod', 'row', 'rwd', 'wod', 'wro'],
+ 4: ['drow', 'word']}
+"""
+```
+
+### CLI
+
+[Install](https://github.com/jojoee/wordcookies#installation) the package then
+
+```bash
+python -m wordcookies cli
+python -m wordcookies cli --word="word"
+python -m wordcookies cli --word="word" --exit
+```
+
+## Installation
+
+```
+pip install wordcookies
+
+# or
+git clone https://github.com/jojoee/wordcookies
+cd wordcookies
+python setup.py install
+```
 
 ## Features
 
