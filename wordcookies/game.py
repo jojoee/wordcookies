@@ -51,8 +51,6 @@ def get_possible_answers(chars: List[str], word_set: Set = all_words) -> List[st
     for n in range(2, len(chars) + 1):
         s = "".join(chars)
 
-        print("s", s)
-
         items = permutations(s, n)  # list of  tuple
         items = ["".join(map(str, item)) for item in items]  # make it list of string
         items = list(set(items))  # make it unique, e.g. "local" can generate duplicate answer
