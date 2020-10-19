@@ -1,0 +1,34 @@
+body {
+  max-width: 600px;
+  font-family: sans-serif;
+}
+
+form {
+  margin-bottom: 12px;
+}
+
+input {
+  font-size: 32px;
+  width: 240px;
+  text-transform: uppercase;
+}
+
+button {
+  font-size: 20px;
+}
+
+
+#result {
+  
+}
+
+#result span.result-title {
+  text-transform: lowercase;
+  color: #9d9d9d;
+  font-size: 16px;
+}
+
+#result span {
+  font-size: 24px;
+  text-transform: uppercase;
+}

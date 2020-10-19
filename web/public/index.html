@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Word Cookies helper / hinter solver</title>
+  <link rel="stylesheet" href="/public/main.css" />
+</head>
+
+<body>
+  <div class="container">
+    <form id="form">
+      <input type="text" id="inp" name="inp" placeholder="word" value="word" pattern="[a-zA-Z]+"
+        oninvalid="setCustomValidity('Please enter on alphabets only.')" maxlength="14" />
+      <button id="submit">submit</button>
+    </form>
+    <div id="result"></div>
+  </div>
+  <script id="result-hdbtemplate" type="text/x-handlebars-template">
+    <div class="result-box result-{{n}}">
+      <span class="result-title">{{n}} characters</span>
+      <br />
+      {{#each words}}
+        <span>{{this}}</span>, 
+      {{/each}}
+      <hr />
+    </div>
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+  <script src="/public/main.js"></script>
+</body>
+
+</html>
