@@ -7,6 +7,10 @@ Word Cookies helper
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![codecov](https://codecov.io/gh/jojoee/wordcookies/branch/master/graph/badge.svg)](https://codecov.io/gh/jojoee/wordcookies)
 
+## Demo
+
+![Demo](https://raw.githack.com/jojoee/wordcookies/master/demo.png)
+
 ## Usage
 
 ### Library
