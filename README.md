@@ -40,6 +40,24 @@ python -m wordcookies cli --word="word"
 python -m wordcookies cli --word="word" --exit
 ```
 
+### Web (Docker)
+
+Install [Docker](https://docs.docker.com/get-docker/) then run the [jojoee/wordcookies](https://hub.docker.com/repository/docker/jojoee/wordcookies/) Docker image by the command below
+
+```bash
+docker run -p 8082:9001 --name ctn_wordcookies jojoee/wordcookies
+curl localhost:8082
+```
+
+### Web (Docker Compose)
+
+Install [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) then
+
+```bash
+cd ./web
+docker-compose -f docker-compose.yaml up
+```
+
 ## Installation
 
 ```
@@ -55,11 +73,20 @@ python setup.py install
 
 - [ ] [demo] Add cli demo gif
 - [ ] [demo] Add web demo gif
-- [ ] [ci] setup continuous integration
-- [ ] [cd] setup continuous delivery
-- [ ] [pypi] Deploy to https://pypi.org/project/wordcookies/
+- [x] [ci] setup continuous integration
+- [x] [cd] setup continuous delivery
+- [x] [pypi] Deploy to https://pypi.org/project/wordcookies/
 - [ ] [test] Add more test
-- [ ] [cli] add Usage section
+- [x] [cli] add Usage section
+- [ ] [web][docker] use Python base image instead of current
+- [ ] [web][docker] generate dict while building an Docker image
+- [x] [web] add web version
+- [x] [web][docker] add Docker support
+- [x] [web][cache] with file and Redis
+- [ ] [web][cache] pre-caching most common word
+- [x] [web] enhance UI
+- [x] [dict] using nltk data is not good enough, so need to combine with "ahmadly/WordCookiesCheat" (you can try with beginner level, some word is missing)
+- [ ] [web] add e2e test
 
 ## Development
 
@@ -72,12 +99,12 @@ conda activate wordcookies
 python -V
 pip list
 
-# dev
+# lib, dev
 pip install -r requirements.txt
 PYTHONPATH="$PWD" python wordcookies/cli.py
 pip freeze > requirements.txt
 
-# test
+# lib, test
 conda remove --name wordcookies_test --all
 conda create --name wordcookies_test python=3.7.5
 conda activate wordcookies_test
@@ -89,7 +116,46 @@ python -m wordcookies cli
 python -m wordcookies cli --word="word"
 python -m wordcookies cli --word="word" --exit
 
-# test pypi
+# lib, test pypi
 pip install twine # package for publishing
 python setup.py sdist bdist_wheel # build the package
+
+# web
+cd ./web
+conda remove --name wordcookies_web --all
+conda create --name wordcookies_web python=3.7.5
+conda activate wordcookies_web
+pip install -r requirements.txt
+uvicorn main:app --reload --port 9002 # dev + hot reload
+uvicorn main:app --port 9002 & # dev
+python main.py # run on prod
+
+# web, util
+lsof -i -n -P | grep 9002
+docker run -p 6379:6379 --name ctn_redis -d redis:6.0.8
+
+# web, Cocker
+cd ./web
+docker build -f Dockerfile -t jojoee/wordcookies:0.0.1 .
+docker run -p 8082:9001 --name ctn_wordcookies jojoee/wordcookies:0.0.1
+docker run -p 8082:9001 --name ctn_wordcookies jojoee/wordcookies
+docker start ctn_wordcookies
+http://localhost:8082/healthcheck
+http://localhost:8082/404
+
+# web, Docker Compose
+docker-compose -f docker-compose.yaml up
+docker-compose -f docker-compose.dev.yaml up --build
+docker-compose -f docker-compose.dev.yaml up
 ```
+
+## Reference
+- [Word Cookies!®](https://play.google.com/store/apps/details?id=com.bitmango.go.wordcookies&hl=en)
+- [Word Cookies!®](https://itunes.apple.com/us/app/word-cookies/id1153883316?mt=8)
+- https://github.com/ahmadly/WordCookiesCheat
+- Data for building word dictionary
+  - https://www.nltk.org/nltk_data/
+  - https://github.com/ahmadly/WordCookiesCheat
+  - https://www.nltk.org/data.html
+  - https://github.com/dwyl/english-words
+  - https://stackoverflow.com/questions/2213607/how-to-get-english-language-word-database
