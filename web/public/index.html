@@ -7,17 +7,32 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Word Cookies helper / hinter solver</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
   <link rel="stylesheet" href="/public/main.css" />
 </head>
 
 <body>
   <div class="container">
-    <form id="form">
-      <input type="text" id="inp" name="inp" placeholder="word" value="word" pattern="[a-zA-Z]+"
-        oninvalid="setCustomValidity('Please enter on alphabets only.')" maxlength="14" />
-      <button id="submit">submit</button>
-    </form>
-    <div id="result"></div>
+    <div class="row">
+      <form id="form">
+        <div class="three columns">
+          <label for="inp">WordCookies</label>
+        </div>
+        <div class="six columns">
+          <input type="text" id="inp" name="inp" placeholder="word" value="word" pattern="[a-zA-Z]+"
+            oninvalid="setCustomValidity('Please enter on alphabets only.')" maxlength="14">
+        </div>
+        <div class="three columns">
+          <button id="submit" class="button-primary">submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div id="result">
+      </div>
+    </div>
   </div>
   <script id="result-hdbtemplate" type="text/x-handlebars-template">
     <div class="result-box result-{{n}}">

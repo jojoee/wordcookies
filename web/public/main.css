@@ -1,25 +1,18 @@
 body {
-  max-width: 600px;
   font-family: sans-serif;
 }
 
 form {
-  margin-bottom: 12px;
+  height: 100%;
 }
 
-input {
-  font-size: 32px;
-  width: 240px;
+input[type="text"] {
+  width: 100%;
   text-transform: uppercase;
 }
 
-button {
-  font-size: 20px;
-}
-
-
-#result {
-  
+button#submit {
+  width: 100%;
 }
 
 #result span.result-title {
@@ -29,6 +22,11 @@ button {
 }
 
 #result span {
-  font-size: 24px;
+  font-size: 20px;
   text-transform: uppercase;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
