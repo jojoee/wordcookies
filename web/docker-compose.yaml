@@ -1,0 +1,28 @@
+version: "2.1"
+
+services:
+  app_wordcookies:
+    image: jojoee/wordcookies
+    container_name: ctn_wordcookies
+    restart: always
+    working_dir: /app
+    environment:
+      IS_DEBUG: "True"
+      PORT: "9002"
+      REDIS_HOST: "db_redis"
+      REDIS_PASS:
+      REDIS_PORT:
+      REDIS_DB:
+    ports:
+      - 9002:9002
+    links:
+      - db_redis
+
+  db_redis:
+    image: redis:6.0.6
+    container_name: ctn_redis
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 1s
+      timeout: 3s
+      retries: 30
