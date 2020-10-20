@@ -141,8 +141,8 @@ docker run -p 6379:6379 --name ctn_redis -d redis:6.0.8
 
 # web, Cocker
 cd ./web
-docker build -f Dockerfile -t jojoee/wordcookies:0.0.1 .
-docker run -p 8082:9001 --name ctn_wordcookies jojoee/wordcookies:0.0.1
+docker build -f Dockerfile -t jojoee/wordcookies:dev .
+docker run -p 8082:9001 --name ctn_wordcookies jojoee/wordcookies:dev
 docker run -p 8082:9001 --name ctn_wordcookies jojoee/wordcookies
 docker start ctn_wordcookies
 http://localhost:8082/healthcheck
