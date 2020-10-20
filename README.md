@@ -84,7 +84,7 @@ python setup.py install
 - [ ] [test] Add more test
 - [x] [cli] add Usage section
 - [ ] [web][docker] use Python base image instead of current
-- [ ] [web][docker] generate dict while building an Docker image
+- [ ] [web][docker] generate dict while building a Docker image
 - [x] [web] add web version
 - [x] [web][docker] add Docker support
 - [x] [web][cache] with file and Redis
