@@ -76,8 +76,8 @@ python setup.py install
 
 ## Features
 
-- [ ] [demo] Add cli demo gif
-- [ ] [demo] Add web demo gif
+- [x] [demo] Add cli demo gif
+- [x] [demo] Add web demo gif
 - [x] [ci] setup continuous integration
 - [x] [cd] setup continuous delivery
 - [x] [pypi] Deploy to https://pypi.org/project/wordcookies/
