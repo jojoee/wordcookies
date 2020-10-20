@@ -10,7 +10,7 @@ Word Cookies helper
 ## Demo
 
 ![Demo](https://raw.githack.com/jojoee/wordcookies/master/demo.png)
-![Demo](https://i.imgur.com/Rc8dyZD.gif)
+![Demo](https://i.imgur.com/xAMDvMM.gif)
 
 ## Usage
 
