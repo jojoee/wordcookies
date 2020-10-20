@@ -26,6 +26,11 @@ function render (data) {
   $result.html(html)
 }
 
+// auto focus the input
+$(document).ready(function (e) {
+  $input.focus()
+})
+
 $(document).on('submit', $formSelector, function (e) {
   // prevent
   e.preventDefault()
