@@ -139,3 +139,6 @@ all_words.pickle
 !.env.example
 !.env.test
 !.env.docker
+
+# web
+web/cache
