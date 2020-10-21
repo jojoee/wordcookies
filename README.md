@@ -6,6 +6,7 @@ Word Cookies helper
 [![PyPI version fury.io](https://badge.fury.io/py/wordcookies.svg)](https://pypi.python.org/pypi/wordcookies/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![codecov](https://codecov.io/gh/jojoee/wordcookies/branch/master/graph/badge.svg)](https://codecov.io/gh/jojoee/wordcookies)
+
 [![Docker Stars](https://img.shields.io/docker/stars/jojoee/wordcookies.svg?style=flat-square)](https://hub.docker.com/r/jojoee/wordcookies/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/jojoee/wordcookies.svg?style=flat-square)](https://hub.docker.com/r/jojoee/wordcookies/)
 [![Image](https://images.microbadger.com/badges/image/jojoee/wordcookies.svg)](http://microbadger.com/images/jojoee/wordcookies)
