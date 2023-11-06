@@ -96,10 +96,11 @@ python setup.py install
 - [x] [web] enhance UI
 - [x] [dict] using nltk data is not good enough, so need to combine with "ahmadly/WordCookiesCheat" (you can try with beginner level, some word is missing)
 - [ ] [web] add e2e test
+- [ ] [web] compress data when saving into Redis
 
 ## Development
 
-```
+```bash
 conda -V
 conda deactivate
 conda remove --name wordcookies --all
